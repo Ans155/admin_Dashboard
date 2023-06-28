@@ -93,7 +93,6 @@ const navItems = [
 ];
 
 const Sidebar = ({
-  user,
   drawerWidth,
   isSidebarOpen,
   setIsSidebarOpen,
@@ -124,6 +123,7 @@ const Sidebar = ({
               boxSixing: "border-box",
               borderWidth: isNonMobile ? 0 : "2px",
               width: drawerWidth,
+              overflowY: "hidden", // Remove the vertical scroll bar
             },
           }}
         >
