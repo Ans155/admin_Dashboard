@@ -1,24 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { Provider } from 'react-redux';
-import { createStore, combineReducers } from 'redux';
-import './index.css';
-import App from './App';
-import { globalSlice } from './state/index';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import { configureStore } from "@reduxjs/toolkit";
+import globalReducer from "state";
+import { Provider } from "react-redux";
+import { setupListeners } from "@reduxjs/toolkit/query";
+import { api } from "state/api";
 
-const rootReducer = combineReducers({
-  global: globalSlice.reducer,
-  // Add other reducers here if needed
+const store = configureStore({
+  reducer: {
+    global: globalReducer,
+    [api.reducerPath]: api.reducer,
+  },
+  middleware: (getDefault) => getDefault().concat(api.middleware),
 });
+setupListeners(store.dispatch);
 
-const store = createStore(rootReducer); // Create the Redux store with the root reducer
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-    <App />
-  </Provider>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
-
