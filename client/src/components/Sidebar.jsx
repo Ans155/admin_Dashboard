@@ -124,7 +124,6 @@ const Sidebar = ({
               boxSixing: "border-box",
               borderWidth: isNonMobile ? 0 : "2px",
               width: drawerWidth,
-              overflowY: "hidden", // Remove the vertical scroll bar
             },
           }}
         >
@@ -195,7 +194,7 @@ const Sidebar = ({
           </Box>
 
 
-          <Box position="absolute" bottom="2rem">
+          <Box position="realtive" bottom="5rem">
             <Divider />
             <FlexBetween textTransform="none" gap="1rem" m="1.5rem 2rem 0 3rem">
               <Box
