@@ -11,7 +11,7 @@ import managementRoutes from "./routes/management.js";
 import salesRoutes from "./routes/sales.js";
 import User from "./models/User.js";
 import Product from "./models/Product.js"
-import Transaction from "./models/Transactions.js";
+import Transaction from "./models/Transaction.js";
 import ProductStat from "./models/ProductStat.js";
 import { dataUser, dataProduct, dataProductStat, dataTransaction } from "./data/index.js";
 
