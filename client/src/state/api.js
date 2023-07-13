@@ -30,6 +30,10 @@ export const api = createApi({
       }),
       providesTags: ["Transactions"],
     }),
+    getSales: build.query({
+      query: () => "sales/sales",
+      providesTags: ["Sales"],
+    }),
   }),
 });
 
@@ -37,5 +41,6 @@ export const {
   useGetUserQuery,
   useGetProductsQuery,
   useGetCustomersQuery,
-  useGetTransactionsQuery
+  useGetTransactionsQuery,
+  useGetSalesQuery,
 } = api;
