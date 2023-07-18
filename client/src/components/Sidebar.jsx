@@ -55,10 +55,6 @@ const navItems = [
     icon: <ReceiptLongOutlined />,
   },
   {
-    text: "Geography",
-    icon: <PublicOutlined />,
-  },
-  {
     text: "Sales",
     icon: null,
   },
@@ -67,29 +63,10 @@ const navItems = [
     icon: <PointOfSaleOutlined />,
   },
   {
-    text: "Daily",
-    icon: <TodayOutlined />,
-  },
-  {
-    text: "Monthly",
-    icon: <CalendarMonthOutlined />,
-  },
-  {
     text: "Breakdown",
     icon: <PieChartOutlined />,
   },
-  {
-    text: "Management",
-    icon: null,
-  },
-  {
-    text: "Admin",
-    icon: <AdminPanelSettingsOutlined />,
-  },
-  {
-    text: "Performance",
-    icon: <TrendingUpOutlined />,
-  },
+
 ];
 
 const Sidebar = ({
@@ -132,7 +109,7 @@ const Sidebar = ({
               <FlexBetween color={theme.palette.secondary.main}>
                 <Box display="flex" alignItems="center" gap="0.5rem">
                   <Typography variant="h4" fontWeight="bold">
-                    ECOMVISION
+                    ADMIN MARKET
                   </Typography>
                 </Box>
                 {!isNonMobile && (
@@ -194,7 +171,7 @@ const Sidebar = ({
           </Box>
 
 
-          <Box position="realtive" bottom="5rem">
+          <Box position="absolute" bottom="1.5rem">
             <Divider />
             <FlexBetween textTransform="none" gap="1rem" m="1.5rem 2rem 0 3rem">
               <Box
