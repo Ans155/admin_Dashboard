@@ -66,6 +66,14 @@ const navItems = [
     text: "Breakdown",
     icon: <PieChartOutlined />,
   },
+  {
+    text: "Management",
+    icon: null,
+  },
+  {
+    text: "Admin",
+    icon: <AdminPanelSettingsOutlined />,
+  },
 
 ];
 
