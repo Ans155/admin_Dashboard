@@ -73,12 +73,6 @@ const Product = ({
         <CardContent>
           <Typography>id: {_id}</Typography>
           <Typography>Supply Left: {supply}</Typography>
-          <Typography>
-            Yearly Sales This Year: {stat.yearlySalesTotal}
-          </Typography>
-          <Typography>
-            Yearly Units Sold This Year: {stat.yearlyTotalSoldUnits}
-          </Typography>
         </CardContent>
       </Collapse>
     </Card>
@@ -87,6 +81,7 @@ const Product = ({
 
 const Products = () => {
   const { data, isLoading } = useGetProductsQuery();
+  console.log(data);
   const isNonMobile = useMediaQuery("(min-width: 1000px)");
 
   return (
@@ -113,7 +108,7 @@ const Products = () => {
               rating,
               category,
               supply,
-              stat,
+             
             }) => (
               <Product
                 key={_id}
@@ -124,7 +119,7 @@ const Products = () => {
                 rating={rating}
                 category={category}
                 supply={supply}
-                stat={stat}
+                
               />
             )
           )}

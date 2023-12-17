@@ -4,23 +4,15 @@ import User from "../models/User.js";
 import Transaction from "../models/Transaction.js";
 export const getProducts = async (req, res) => {
   try {
-    const products = await Product.find();
+    // Fetch all products and populate 'stat' field
+    const productsWithStats = await Product.find().populate('productStat')
 
-    const productsWithStats = await Promise.all(
-      products.map(async (product) => {
-        const stat = await ProductStat.find({
-          productId: product._id,
-        });
-        return {
-          ...product._doc,
-          stat,
-        };
-      })
-    );
-
+    // Respond with the result
     res.status(200).json(productsWithStats);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    // Handle errors
+    console.log(error);
+    res.status(500).json({ message: "Internal Server Error" });
   }
 };
 
