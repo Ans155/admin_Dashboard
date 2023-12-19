@@ -5,7 +5,7 @@ import Transaction from "../models/Transaction.js";
 export const getProducts = async (req, res) => {
   try {
     // Fetch all products and populate 'stat' field
-    const productsWithStats = await Product.find().populate('productStat')
+    const productsWithStats = await Product.find().limit(50).populate('productStat')
 
     // Respond with the result
     res.status(200).json(productsWithStats);
